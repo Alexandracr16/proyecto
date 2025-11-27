@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas - Sistema Vuelos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Gestión de Reservas</h2>
+        <button onclick="logout()">Cerrar Sesión</button>
+
+        <h3>Crear Reserva</h3>
+        <form id="formReserva">
+            <input type="number" id="user_id" placeholder="ID Usuario" required>
+            <input type="number" id="flight_id" placeholder="ID Vuelo" required>
+            <button type="submit">Crear</button>
+        </form>
+
+        <h3>Lista de Reservas</h3>
+        <table id="tablaReservas">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Usuario ID</th><th>Vuelo ID</th><th>Status</th><th>Reservado</th><th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/reservas.js"></script>
+</body>
+</html>
+

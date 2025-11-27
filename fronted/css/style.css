@@ -1,0 +1,179 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body general */
+body {
+    background-color: #f5f6fa;
+    color: #2f3640;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.login-container, .dashboard-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0984e3;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00b894;
+}
+
+/* Formularios */
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #74b9ff;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #dcdde1;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #0984e3;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f1f2f6;
+}
+
+/* Botones de acciones */
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Navbar / enlaces dashboard */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #00b894;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #55efc4;
+}
+
+/* Mensajes de alerta */
+.alerta {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.alerta.error {
+    background-color: #fab1a0;
+    color: #c23616;
+}
+
+.alerta.exito {
+    background-color: #81ecec;
+    color: #00b894;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .login-container, .dashboard-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* Pestañas del dashboard */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background-color: #00b894;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-link.active {
+    background-color: #0984e3;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}

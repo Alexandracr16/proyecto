@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios - Sistema Vuelos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Gestión de Usuarios</h2>
+        <button onclick="logout()">Cerrar Sesión</button>
+
+        <h3>Crear Usuario</h3>
+        <form id="formUsuario">
+            <input type="text" id="name" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Correo" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <select id="role">
+                <option value="administrador">Administrador</option>
+                <option value="gestor">Gestor</option>
+            </select>
+            <button type="submit">Crear</button>
+        </form>
+
+        <h3>Lista de Usuarios</h3>
+        <table id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Nombre</th><th>Correo</th><th>Rol</th><th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/usuarios.js"></script>
+</body>
+</html>

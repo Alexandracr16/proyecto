@@ -1,0 +1,115 @@
+#################################################
+### MS_VUELOS
+#################################################
+
+# Definir variable TOKEN (copiar el token obtenido de ms_usuarios login)
+@TOKEN = 
+
+###
+# NAVES
+# Listar todas las naves
+GET http://localhost:8001/naves
+Authorization: Bearer {{TOKEN}}
+
+# Crear nave
+POST http://localhost:8001/naves
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": "Aeronave D4",
+  "capacity": 200,
+  "model": "Boeing 777"
+}
+
+# Actualizar nave
+PUT http://localhost:8001/naves/1
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": "Aeronave Modificada",
+  "capacity": 180,
+  "model": "Airbus A321"
+}
+
+# Eliminar nave
+DELETE http://localhost:8001/naves/2
+Authorization: Bearer {{TOKEN}}
+
+
+###
+# VUELOS
+# Listar todos los vuelos
+GET http://localhost:8001/flights
+Authorization: Bearer {{TOKEN}}
+
+# Buscar vuelos por origen/destino/fecha
+GET http://localhost:8001/flights?origen=Bogotá&destino=Cali
+Authorization: Bearer {{TOKEN}}
+
+# Crear vuelo
+POST http://localhost:8001/flights
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "nave_id": 1,
+  "origin": "Bogotá",
+  "destination": "Cartagena",
+  "departure": "2025-12-20 08:00",
+  "arrival": "2025-12-20 09:30",
+  "price": 300000
+}
+
+# Actualizar vuelo
+PUT http://localhost:8001/flights/1
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "nave_id": 1,
+  "origin": "Bogotá",
+  "destination": "Medellín",
+  "departure": "2025-12-21 08:00",
+  "arrival": "2025-12-21 09:00",
+  "price": 250000
+}
+
+# Eliminar vuelo
+DELETE http://localhost:8001/flights/1
+Authorization: Bearer {{TOKEN}}
+
+
+###
+# RESERVAS
+# Listar todas las reservas
+GET http://localhost:8001/reservations
+Authorization: Bearer {{TOKEN}}
+
+# Consultar reservas por usuario
+GET http://localhost:8001/reservations?user_id=2
+Authorization: Bearer {{TOKEN}}
+
+# Crear reserva
+POST http://localhost:8001/reservations
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "flight_id": 3
+}
+
+# Cancelar reserva
+PUT http://localhost:8001/reservations/1
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "status": "cancelada"
+}
+
+# Eliminar reserva (opcional)
+DELETE http://localhost:8001/reservations/1
+Authorization: Bearer {{TOKEN}}

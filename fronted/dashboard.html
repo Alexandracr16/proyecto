@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Sistema Vuelos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Panel de Control</h2>
+        <button onclick="logout()">Cerrar Sesión</button>
+
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab-link active" data-tab="usuarios">Usuarios</button>
+            <button class="tab-link" data-tab="naves">Naves</button>
+            <button class="tab-link" data-tab="vuelos">Vuelos</button>
+            <button class="tab-link" data-tab="reservas">Reservas</button>
+        </div>
+
+        <!-- Contenido de las pestañas -->
+        <div id="usuarios" class="tab-content active">
+            <iframe src="dashboard/usuarios.html" frameborder="0" width="100%" height="600px"></iframe>
+        </div>
+
+        <div id="naves" class="tab-content">
+            <iframe src="dashboard/naves.html" frameborder="0" width="100%" height="600px"></iframe>
+        </div>
+
+        <div id="vuelos" class="tab-content">
+            <iframe src="dashboard/vuelos.html" frameborder="0" width="100%" height="600px"></iframe>
+        </div>
+
+        <div id="reservas" class="tab-content">
+            <iframe src="dashboard/reservas.html" frameborder="0" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        verificarToken();
+
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                tabLinks.forEach(l => l.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                link.classList.add('active');
+                document.getElementById(link.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

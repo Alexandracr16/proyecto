@@ -1,0 +1,9 @@
+<?php
+namespace App\Modelos;
+use Illuminate\Database\Eloquent\Model;
+
+class Reservation extends Model {
+    protected $table = 'reservations';
+    protected $fillable = ['user_id','flight_id','status'];
+    public $timestamps = true;
+}

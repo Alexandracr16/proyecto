@@ -1,0 +1,57 @@
+#################################################
+### MS_USUARIOS
+#################################################
+
+# Definir variable TOKEN (inicialmente vacía, se actualiza después de login)
+@TOKEN = 
+
+###
+# Login (usa este para obtener el token)
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "email": "admin@system.com",
+  "password": "admin123"
+}
+
+###
+# Logout
+POST http://localhost:8000/logout
+Authorization: Bearer {{TOKEN}}
+
+###
+# Listar usuarios
+GET http://localhost:8000/usuarios
+Authorization: Bearer {{TOKEN}}
+
+###
+# Crear usuario
+POST http://localhost:8000/usuarios
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": "Usuario Prueba",
+  "email": "prueba@system.com",
+  "password": "123456",
+  "role": "gestor"
+}
+
+###
+# Actualizar usuario
+PUT http://localhost:8000/usuarios/2
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": "Usuario Actualizado",
+  "email": "actualizado@system.com",
+  "password": "654321",
+  "role": "administrador"
+}
+
+###
+# Eliminar usuario
+DELETE http://localhost:8000/usuarios/3
+Authorization: Bearer {{TOKEN}}

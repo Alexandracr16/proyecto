@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Naves - Sistema Vuelos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Gestión de Naves</h2>
+        <button onclick="logout()">Cerrar Sesión</button>
+
+        <h3>Crear Nave</h3>
+        <form id="formNave">
+            <input type="text" id="name" placeholder="Nombre" required>
+            <input type="number" id="capacity" placeholder="Capacidad" required>
+            <input type="text" id="model" placeholder="Modelo" required>
+            <button type="submit">Crear</button>
+        </form>
+
+        <h3>Lista de Naves</h3>
+        <table id="tablaNaves">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Nombre</th><th>Capacidad</th><th>Modelo</th><th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/naves.js"></script>
+</body>
+</html>
+
