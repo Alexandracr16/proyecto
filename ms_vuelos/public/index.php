@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/Configuracion/database.php';
+require __DIR__ . '/../app/Configuracion/database.php';
 
 use Slim\Factory\AppFactory;
 use App\Controladores\NavesController;
